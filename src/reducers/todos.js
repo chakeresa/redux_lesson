@@ -9,6 +9,10 @@ export const todos = (state = [], action) => {
           completed: false,
         },
       ];
+    case 'TOGGLE_TODO':
+      let index = state.findIndex((todo) => todo.id === action.todoId);
+      state[index].completed = !state[index].completed;
+      return state;
     default:
       return state;
   }

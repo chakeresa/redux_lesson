@@ -5,10 +5,12 @@ import { toggleTodo } from '../actions';
 class Todo extends Component {
   constructor(props) {
     super(props);
+    this.state = { completed: props.completed };
   }
 
   handleClick = (e) => {
-    e.target.classList.toggle('completed');
+    this.props.toggleTodo(this.props.id);
+    // e.target.classList.toggle('completed');
   };
 
   render() {
