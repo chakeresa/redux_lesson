@@ -1,6 +1,6 @@
-export const addTodo = (todo) => ({
+export const addTodo = (text) => ({
   type: 'ADD_TODO',
-  todo,
+  text,
 });
 
 export const toggleTodo = (todoId) => ({

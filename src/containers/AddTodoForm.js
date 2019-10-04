@@ -5,24 +5,24 @@ import { connect } from 'react-redux';
 class AddTodoForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { todo: '' };
+    this.state = { text: '' };
   }
 
   handleChange = (e) => {
-    this.setState({ todo: e.target.value });
+    this.setState({ text: e.target.value });
   };
 
   submitForm = (e) => {
     e.preventDefault();
-    this.props.addTodo(this.state.todo);
-    this.setState({ todo: '' });
+    this.props.addTodo(this.state.text);
+    this.setState({ text: '' });
   };
 
   render() {
     return (
       <section>
         <form onSubmit={this.submitForm}>
-          <input value={this.state.todo} placeholder="Add A Todo" onChange={this.handleChange} />
+          <input value={this.state.text} placeholder="Add A Todo" onChange={this.handleChange} />
           <button>Add Todo</button>
         </form>
       </section>

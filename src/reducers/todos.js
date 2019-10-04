@@ -5,7 +5,7 @@ export const todos = (state = [], action) => {
         ...state,
         {
           id: Date.now(),
-          todo: action.todo,
+          text: action.text,
           completed: false,
         },
       ];

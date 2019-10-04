@@ -3,18 +3,20 @@ import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
 
 class Todo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { completed: props.completed };
-  }
-
   handleClick = (e) => {
     this.props.toggleTodo(this.props.id);
-    // e.target.classList.toggle('completed');
+  };
+
+  completedClass = () => {
+    return this.props.completed ? 'completed' : 'not-completed';
   };
 
   render() {
-    return <li onClick={this.handleClick}>{this.props.todo}</li>;
+    return (
+      <li className={this.completedClass()} onClick={this.handleClick}>
+        {this.props.text}
+      </li>
+    );
   }
 }
 
