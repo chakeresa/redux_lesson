@@ -11,8 +11,9 @@ export const todos = (state = [], action) => {
       ];
     case 'TOGGLE_TODO':
       let index = state.findIndex((todo) => todo.id === action.todoId);
-      state[index].completed = !state[index].completed;
-      return state;
+      let newState = [...state];
+      newState[index].completed = !newState[index].completed;
+      return newState;
     default:
       return state;
   }
